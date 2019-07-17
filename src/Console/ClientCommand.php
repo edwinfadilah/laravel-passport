@@ -3,6 +3,7 @@
 namespace EdwinFadilah\Passport\Console;
 
 use EdwinFadilah\Passport\Client;
+use EdwinFadilah\Passport\Contracts\ClientModelInterface;
 use Illuminate\Console\Command;
 use EdwinFadilah\Passport\ClientRepository;
 
@@ -146,10 +147,10 @@ class ClientCommand extends Command
     /**
      * Output the client's ID and secret key.
      *
-     * @param  \EdwinFadilah\Passport\Client  $client
+     * @param  \EdwinFadilah\Passport\Contracts\ClientModelInterface  $client
      * @return void
      */
-    protected function outputClientDetails(Client $client)
+    protected function outputClientDetails(ClientModelInterface $client)
     {
         $this->line('<comment>Client ID:</comment> '.$client->id);
         $this->line('<comment>Client secret:</comment> '.$client->secret);
