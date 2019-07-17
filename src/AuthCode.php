@@ -2,9 +2,10 @@
 
 namespace EdwinFadilah\Passport;
 
+use EdwinFadilah\Passport\Contracts\AuthCodeModelInterface;
 use Illuminate\Database\Eloquent\Model;
 
-class AuthCode extends Model
+class AuthCode extends Model implements AuthCodeModelInterface
 {
     /**
      * The database table used by the model.

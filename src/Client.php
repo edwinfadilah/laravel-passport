@@ -2,9 +2,10 @@
 
 namespace EdwinFadilah\Passport;
 
+use EdwinFadilah\Passport\Contracts\ClientModelInterface;
 use Illuminate\Database\Eloquent\Model;
 
-class Client extends Model
+class Client extends Model implements ClientModelInterface
 {
     /**
      * The database table used by the model.

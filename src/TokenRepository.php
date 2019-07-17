@@ -3,6 +3,7 @@
 namespace EdwinFadilah\Passport;
 
 use Carbon\Carbon;
+use EdwinFadilah\Passport\Contracts\TokenModelInterface;
 
 class TokenRepository
 {
@@ -10,7 +11,7 @@ class TokenRepository
      * Creates a new Access Token.
      *
      * @param  array  $attributes
-     * @return \EdwinFadilah\Passport\Token
+     * @return \EdwinFadilah\Passport\Contracts\TokenModelInterface
      */
     public function create($attributes)
     {
@@ -21,7 +22,7 @@ class TokenRepository
      * Get a token by the given ID.
      *
      * @param  string  $id
-     * @return \EdwinFadilah\Passport\Token
+     * @return \EdwinFadilah\Passport\Contracts\TokenModelInterface
      */
     public function find($id)
     {
@@ -33,7 +34,7 @@ class TokenRepository
      *
      * @param  string  $id
      * @param  int  $userId
-     * @return \EdwinFadilah\Passport\Token|null
+     * @return \EdwinFadilah\Passport\Contracts\TokenModelInterface|null
      */
     public function findForUser($id, $userId)
     {
@@ -55,8 +56,8 @@ class TokenRepository
      * Get a valid token instance for the given user and client.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $user
-     * @param  \EdwinFadilah\Passport\Client  $client
-     * @return \EdwinFadilah\Passport\Token|null
+     * @param  \EdwinFadilah\Passport\Contracts\ClientModelInterface  $client
+     * @return \EdwinFadilah\Passport\Contracts\TokenModelInterface|null
      */
     public function getValidToken($user, $client)
     {
@@ -70,10 +71,10 @@ class TokenRepository
     /**
      * Store the given token instance.
      *
-     * @param  \EdwinFadilah\Passport\Token  $token
+     * @param TokenModelInterface $token
      * @return void
      */
-    public function save(Token $token)
+    public function save(TokenModelInterface $token)
     {
         $token->save();
     }
@@ -109,8 +110,8 @@ class TokenRepository
      * Find a valid token for the given user and client.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $user
-     * @param  \EdwinFadilah\Passport\Client  $client
-     * @return \EdwinFadilah\Passport\Token|null
+     * @param  \EdwinFadilah\Passport\Contracts\ClientModelInterface  $client
+     * @return \EdwinFadilah\Passport\Contracts\TokenModelInterface|null
      */
     public function findValidToken($user, $client)
     {

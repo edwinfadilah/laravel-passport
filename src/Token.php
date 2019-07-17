@@ -2,9 +2,10 @@
 
 namespace EdwinFadilah\Passport;
 
+use EdwinFadilah\Passport\Contracts\TokenModelInterface;
 use Illuminate\Database\Eloquent\Model;
 
-class Token extends Model
+class Token extends Model implements TokenModelInterface
 {
     /**
      * The database table used by the model.

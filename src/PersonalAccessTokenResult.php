@@ -17,7 +17,7 @@ class PersonalAccessTokenResult implements Arrayable, Jsonable
     /**
      * The token model instance.
      *
-     * @var \EdwinFadilah\Passport\Token
+     * @var \EdwinFadilah\Passport\Contracts\TokenModelInterface
      */
     public $token;
 
@@ -25,7 +25,7 @@ class PersonalAccessTokenResult implements Arrayable, Jsonable
      * Create a new result instance.
      *
      * @param  string  $accessToken
-     * @param  \EdwinFadilah\Passport\Token  $token
+     * @param  \EdwinFadilah\Passport\Contracts\TokenModelInterface  $token
      * @return void
      */
     public function __construct($accessToken, $token)
