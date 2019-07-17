@@ -1,5 +1,5 @@
 {
-    "name": "edwinfadilah/passport",
+    "name": "edwinfadilah/laravel-passport",
     "description": "EdwinFadilah Passport provides OAuth2 server support to Laravel with additional compatibility to handle custom models.",
     "keywords": ["laravel", "passport", "oauth", "edwinfadilah"],
     "license": "MIT",
