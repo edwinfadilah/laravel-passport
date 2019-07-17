@@ -1,8 +1,8 @@
 <?php
 
-namespace Laravel\Passport\Tests;
+namespace EdwinFadilah\Passport\Tests;
 
-use Laravel\Passport\Token;
+use EdwinFadilah\Passport\Token;
 use PHPUnit\Framework\TestCase;
 
 class TokenTest extends TestCase

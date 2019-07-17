@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Passport\Http\Rules;
+namespace EdwinFadilah\Passport\Http\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Contracts\Validation\Factory;

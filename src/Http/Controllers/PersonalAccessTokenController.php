@@ -1,11 +1,11 @@
 <?php
 
-namespace Laravel\Passport\Http\Controllers;
+namespace EdwinFadilah\Passport\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Laravel\Passport\Passport;
-use Laravel\Passport\TokenRepository;
+use EdwinFadilah\Passport\Passport;
+use EdwinFadilah\Passport\TokenRepository;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 
 class PersonalAccessTokenController

@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Passport\Tests;
+namespace EdwinFadilah\Passport\Tests;
 
 use Exception;
 use Mockery as m;
@@ -8,13 +8,13 @@ use Lcobucci\JWT\Parser;
 use Zend\Diactoros\Response;
 use PHPUnit\Framework\TestCase;
 use Illuminate\Container\Container;
-use Laravel\Passport\TokenRepository;
+use EdwinFadilah\Passport\TokenRepository;
 use Psr\Http\Message\ResponseInterface;
 use Illuminate\Contracts\Config\Repository;
 use Psr\Http\Message\ServerRequestInterface;
 use League\OAuth2\Server\AuthorizationServer;
 use Illuminate\Contracts\Debug\ExceptionHandler;
-use Laravel\Passport\Http\Controllers\AccessTokenController;
+use EdwinFadilah\Passport\Http\Controllers\AccessTokenController;
 
 class AccessTokenControllerTest extends TestCase
 {

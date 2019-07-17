@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Passport\Http\Controllers;
+namespace EdwinFadilah\Passport\Http\Controllers;
 
 use Exception;
 use Throwable;

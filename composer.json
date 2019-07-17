@@ -1,16 +1,20 @@
 {
-    "name": "laravel/passport",
-    "description": "Laravel Passport provides OAuth2 server support to Laravel.",
-    "keywords": ["laravel", "passport", "oauth"],
+    "name": "edwinfadilah/laravel-passport",
+    "description": "EdwinFadilah Passport provides OAuth2 server support to Laravel with additional compatibility to handle custom models.",
+    "keywords": ["laravel", "passport", "oauth", "edwinfadilah"],
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/laravel/passport/issues",
-        "source": "https://github.com/laravel/passport"
+        "issues": "https://github.com/edwinfadilah/passport/issues",
+        "source": "https://github.com/edwinfadilah/passport"
     },
     "authors": [
         {
             "name": "Taylor Otwell",
             "email": "taylor@laravel.com"
+        },
+        {
+            "name": "Edwin Fadilah",
+            "email": "edwinfadilah@gmail.com"
         }
     ],
     "require": {
@@ -37,12 +41,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Laravel\\Passport\\": "src/"
+            "EdwinFadilah\\Passport\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Laravel\\Passport\\Tests\\": "tests/"
+            "EdwinFadilah\\Passport\\Tests\\": "tests/"
         }
     },
     "extra": {
@@ -51,7 +55,7 @@
         },
         "laravel": {
             "providers": [
-                "Laravel\\Passport\\PassportServiceProvider"
+                "EdwinFadilah\\Passport\\PassportServiceProvider"
             ]
         }
     },

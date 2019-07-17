@@ -1,10 +1,10 @@
 <?php
 
-namespace Laravel\Passport\Console;
+namespace EdwinFadilah\Passport\Console;
 
 use phpseclib\Crypt\RSA;
 use Illuminate\Support\Arr;
-use Laravel\Passport\Passport;
+use EdwinFadilah\Passport\Passport;
 use Illuminate\Console\Command;
 
 class KeysCommand extends Command

@@ -1,11 +1,11 @@
 <?php
 
-namespace Laravel\Passport\Http\Middleware;
+namespace EdwinFadilah\Passport\Http\Middleware;
 
 use Closure;
 use League\OAuth2\Server\ResourceServer;
 use Illuminate\Auth\AuthenticationException;
-use Laravel\Passport\Exceptions\MissingScopeException;
+use EdwinFadilah\Passport\Exceptions\MissingScopeException;
 use League\OAuth2\Server\Exception\OAuthServerException;
 use Symfony\Bridge\PsrHttpMessage\Factory\DiactorosFactory;
 

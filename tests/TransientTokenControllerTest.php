@@ -1,13 +1,13 @@
 <?php
 
-namespace Laravel\Passport\Tests;
+namespace EdwinFadilah\Passport\Tests;
 
 use Mockery as m;
 use Illuminate\Http\Request;
 use PHPUnit\Framework\TestCase;
-use Laravel\Passport\ApiTokenCookieFactory;
+use EdwinFadilah\Passport\ApiTokenCookieFactory;
 use Symfony\Component\HttpFoundation\Cookie;
-use Laravel\Passport\Http\Controllers\TransientTokenController;
+use EdwinFadilah\Passport\Http\Controllers\TransientTokenController;
 
 class TransientTokenControllerTest extends TestCase
 {

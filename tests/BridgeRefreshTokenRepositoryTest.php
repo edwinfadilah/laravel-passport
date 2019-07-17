@@ -1,13 +1,13 @@
 <?php
 
-namespace Laravel\Passport\Tests;
+namespace EdwinFadilah\Passport\Tests;
 
 use Mockery as m;
 use PHPUnit\Framework\TestCase;
 use Illuminate\Database\Connection;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Contracts\Events\Dispatcher;
-use Laravel\Passport\Bridge\RefreshTokenRepository;
+use EdwinFadilah\Passport\Bridge\RefreshTokenRepository;
 
 class BridgeRefreshTokenRepositoryTest extends TestCase
 {

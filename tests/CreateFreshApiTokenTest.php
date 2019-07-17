@@ -1,15 +1,15 @@
 <?php
 
-namespace Laravel\Passport\Tests;
+namespace EdwinFadilah\Passport\Tests;
 
 use Mockery as m;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Laravel\Passport\Passport;
+use EdwinFadilah\Passport\Passport;
 use PHPUnit\Framework\TestCase;
-use Laravel\Passport\ApiTokenCookieFactory;
+use EdwinFadilah\Passport\ApiTokenCookieFactory;
 use Symfony\Component\HttpFoundation\Cookie;
-use Laravel\Passport\Http\Middleware\CreateFreshApiToken;
+use EdwinFadilah\Passport\Http\Middleware\CreateFreshApiToken;
 
 class CreateFreshApiTokenTest extends TestCase
 {

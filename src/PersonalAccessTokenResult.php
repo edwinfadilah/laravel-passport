@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Passport;
+namespace EdwinFadilah\Passport;
 
 use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Contracts\Support\Arrayable;
@@ -17,7 +17,7 @@ class PersonalAccessTokenResult implements Arrayable, Jsonable
     /**
      * The token model instance.
      *
-     * @var \Laravel\Passport\Token
+     * @var \EdwinFadilah\Passport\Token
      */
     public $token;
 
@@ -25,7 +25,7 @@ class PersonalAccessTokenResult implements Arrayable, Jsonable
      * Create a new result instance.
      *
      * @param  string  $accessToken
-     * @param  \Laravel\Passport\Token  $token
+     * @param  \EdwinFadilah\Passport\Token  $token
      * @return void
      */
     public function __construct($accessToken, $token)

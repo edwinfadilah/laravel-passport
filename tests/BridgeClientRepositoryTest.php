@@ -1,22 +1,22 @@
 <?php
 
-namespace Laravel\Passport\Tests;
+namespace EdwinFadilah\Passport\Tests;
 
 use Mockery as m;
 use PHPUnit\Framework\TestCase;
-use Laravel\Passport\Bridge\Client;
-use Laravel\Passport\ClientRepository;
-use Laravel\Passport\Bridge\ClientRepository as BridgeClientRepository;
+use EdwinFadilah\Passport\Bridge\Client;
+use EdwinFadilah\Passport\ClientRepository;
+use EdwinFadilah\Passport\Bridge\ClientRepository as BridgeClientRepository;
 
 class BridgeClientRepositoryTest extends TestCase
 {
     /**
-     * @var \Laravel\Passport\ClientRepository
+     * @var \EdwinFadilah\Passport\ClientRepository
      */
     private $clientModelRepository;
 
     /**
-     * @var \Laravel\Passport\Bridge\ClientRepository
+     * @var \EdwinFadilah\Passport\Bridge\ClientRepository
      */
     private $repository;
 

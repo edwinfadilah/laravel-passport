@@ -1,19 +1,19 @@
 <?php
 
-namespace Laravel\Passport\Tests;
+namespace EdwinFadilah\Passport\Tests;
 
 use Exception;
 use Mockery as m;
-use Laravel\Passport\Token;
+use EdwinFadilah\Passport\Token;
 use Illuminate\Http\Request;
-use Laravel\Passport\Client;
+use EdwinFadilah\Passport\Client;
 use Zend\Diactoros\Response;
-use Laravel\Passport\Passport;
+use EdwinFadilah\Passport\Passport;
 use PHPUnit\Framework\TestCase;
-use Laravel\Passport\Bridge\Scope;
+use EdwinFadilah\Passport\Bridge\Scope;
 use Illuminate\Container\Container;
-use Laravel\Passport\TokenRepository;
-use Laravel\Passport\ClientRepository;
+use EdwinFadilah\Passport\TokenRepository;
+use EdwinFadilah\Passport\ClientRepository;
 use Psr\Http\Message\ResponseInterface;
 use Illuminate\Contracts\Config\Repository;
 use Psr\Http\Message\ServerRequestInterface;
@@ -21,7 +21,7 @@ use League\OAuth2\Server\AuthorizationServer;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use League\OAuth2\Server\RequestTypes\AuthorizationRequest;
-use Laravel\Passport\Http\Controllers\AuthorizationController;
+use EdwinFadilah\Passport\Http\Controllers\AuthorizationController;
 
 class AuthorizationControllerTest extends TestCase
 {

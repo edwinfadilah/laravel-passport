@@ -1,13 +1,13 @@
 <?php
 
-namespace Laravel\Passport\Tests;
+namespace EdwinFadilah\Passport\Tests;
 
 use Mockery as m;
 use Illuminate\Http\Request;
 use PHPUnit\Framework\TestCase;
 use League\OAuth2\Server\ResourceServer;
 use League\OAuth2\Server\Exception\OAuthServerException;
-use Laravel\Passport\Http\Middleware\CheckClientCredentialsForAnyScope;
+use EdwinFadilah\Passport\Http\Middleware\CheckClientCredentialsForAnyScope;
 
 class CheckClientCredentialsForAnyScopeTest extends TestCase
 {
@@ -79,7 +79,7 @@ class CheckClientCredentialsForAnyScopeTest extends TestCase
     }
 
     /**
-     * @expectedException \Laravel\Passport\Exceptions\MissingScopeException
+     * @expectedException \EdwinFadilah\Passport\Exceptions\MissingScopeException
      */
     public function test_exception_is_thrown_if_token_does_not_have_required_scope()
     {
