@@ -1,12 +1,12 @@
 <?php
 
-namespace Laravel\Passport\Tests;
+namespace EdwinFadilah\Passport\Tests;
 
 use Mockery as m;
 use PHPUnit\Framework\TestCase;
 use Illuminate\Encryption\Encrypter;
 use Illuminate\Contracts\Config\Repository;
-use Laravel\Passport\ApiTokenCookieFactory;
+use EdwinFadilah\Passport\ApiTokenCookieFactory;
 use Symfony\Component\HttpFoundation\Cookie;
 
 class ApiTokenCookieFactoryTest extends TestCase

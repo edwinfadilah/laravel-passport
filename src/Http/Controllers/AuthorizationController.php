@@ -1,12 +1,12 @@
 <?php
 
-namespace Laravel\Passport\Http\Controllers;
+namespace EdwinFadilah\Passport\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Laravel\Passport\Passport;
-use Laravel\Passport\Bridge\User;
-use Laravel\Passport\TokenRepository;
-use Laravel\Passport\ClientRepository;
+use EdwinFadilah\Passport\Passport;
+use EdwinFadilah\Passport\Bridge\User;
+use EdwinFadilah\Passport\TokenRepository;
+use EdwinFadilah\Passport\ClientRepository;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response as Psr7Response;
 use League\OAuth2\Server\AuthorizationServer;
@@ -48,8 +48,8 @@ class AuthorizationController
      *
      * @param  \Psr\Http\Message\ServerRequestInterface  $psrRequest
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Laravel\Passport\ClientRepository  $clients
-     * @param  \Laravel\Passport\TokenRepository  $tokens
+     * @param  \EdwinFadilah\Passport\ClientRepository  $clients
+     * @param  \EdwinFadilah\Passport\TokenRepository  $tokens
      * @return \Illuminate\Http\Response
      */
     public function authorize(ServerRequestInterface $psrRequest,

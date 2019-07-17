@@ -1,16 +1,16 @@
 <?php
 
-namespace Laravel\Passport\Tests;
+namespace EdwinFadilah\Passport\Tests;
 
 use Mockery as m;
 use Lcobucci\JWT\Parser;
-use Laravel\Passport\Token;
+use EdwinFadilah\Passport\Token;
 use PHPUnit\Framework\TestCase;
-use Laravel\Passport\TokenRepository;
-use Laravel\Passport\ClientRepository;
+use EdwinFadilah\Passport\TokenRepository;
+use EdwinFadilah\Passport\ClientRepository;
 use League\OAuth2\Server\AuthorizationServer;
-use Laravel\Passport\PersonalAccessTokenResult;
-use Laravel\Passport\PersonalAccessTokenFactory;
+use EdwinFadilah\Passport\PersonalAccessTokenResult;
+use EdwinFadilah\Passport\PersonalAccessTokenFactory;
 
 class PersonalAccessTokenFactoryTest extends TestCase
 {

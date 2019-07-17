@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Passport;
+namespace EdwinFadilah\Passport;
 
 use Mockery;
 use DateInterval;
@@ -101,28 +101,28 @@ class Passport
      *
      * @var string
      */
-    public static $authCodeModel = 'Laravel\Passport\AuthCode';
+    public static $authCodeModel = 'EdwinFadilah\Passport\AuthCode';
 
     /**
      * The client model class name.
      *
      * @var string
      */
-    public static $clientModel = 'Laravel\Passport\Client';
+    public static $clientModel = 'EdwinFadilah\Passport\Client';
 
     /**
      * The personal access client model class name.
      *
      * @var string
      */
-    public static $personalAccessClientModel = 'Laravel\Passport\PersonalAccessClient';
+    public static $personalAccessClientModel = 'EdwinFadilah\Passport\PersonalAccessClient';
 
     /**
      * The token model class name.
      *
      * @var string
      */
-    public static $tokenModel = 'Laravel\Passport\Token';
+    public static $tokenModel = 'EdwinFadilah\Passport\Token';
 
     /**
      * Indicates if Passport migrations will be run.
@@ -165,7 +165,7 @@ class Passport
 
         $defaultOptions = [
             'prefix' => 'oauth',
-            'namespace' => '\Laravel\Passport\Http\Controllers',
+            'namespace' => '\EdwinFadilah\Passport\Http\Controllers',
         ];
 
         $options = array_merge($defaultOptions, $options);
@@ -372,7 +372,7 @@ class Passport
     /**
      * Set the current user for the application with the given scopes.
      *
-     * @param  \Illuminate\Contracts\Auth\Authenticatable|\Laravel\Passport\HasApiTokens  $user
+     * @param  \Illuminate\Contracts\Auth\Authenticatable|\EdwinFadilah\Passport\HasApiTokens  $user
      * @param  array  $scopes
      * @param  string  $guard
      * @return \Illuminate\Contracts\Auth\Authenticatable
@@ -448,7 +448,7 @@ class Passport
     /**
      * Get a new auth code model instance.
      *
-     * @return \Laravel\Passport\AuthCode
+     * @return \EdwinFadilah\Passport\AuthCode
      */
     public static function authCode()
     {
@@ -479,7 +479,7 @@ class Passport
     /**
      * Get a new client model instance.
      *
-     * @return \Laravel\Passport\Client
+     * @return \EdwinFadilah\Passport\Client
      */
     public static function client()
     {
@@ -510,7 +510,7 @@ class Passport
     /**
      * Get a new personal access client model instance.
      *
-     * @return \Laravel\Passport\PersonalAccessClient
+     * @return \EdwinFadilah\Passport\PersonalAccessClient
      */
     public static function personalAccessClient()
     {
@@ -541,7 +541,7 @@ class Passport
     /**
      * Get a new personal access client model instance.
      *
-     * @return \Laravel\Passport\Token
+     * @return \EdwinFadilah\Passport\Token
      */
     public static function token()
     {

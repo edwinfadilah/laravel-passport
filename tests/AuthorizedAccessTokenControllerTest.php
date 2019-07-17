@@ -1,20 +1,20 @@
 <?php
 
-namespace Laravel\Passport\Tests;
+namespace EdwinFadilah\Passport\Tests;
 
 use Mockery as m;
-use Laravel\Passport\Token;
+use EdwinFadilah\Passport\Token;
 use Illuminate\Http\Request;
-use Laravel\Passport\Client;
+use EdwinFadilah\Passport\Client;
 use PHPUnit\Framework\TestCase;
-use Laravel\Passport\TokenRepository;
+use EdwinFadilah\Passport\TokenRepository;
 use Symfony\Component\HttpFoundation\Response;
-use Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController;
+use EdwinFadilah\Passport\Http\Controllers\AuthorizedAccessTokenController;
 
 class AuthorizedAccessTokenControllerTest extends TestCase
 {
     /**
-     * @var \Mockery\Mock|\Laravel\Passport\TokenRepository
+     * @var \Mockery\Mock|\EdwinFadilah\Passport\TokenRepository
      */
     protected $tokenRepository;
 

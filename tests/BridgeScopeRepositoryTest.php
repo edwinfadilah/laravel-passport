@@ -1,12 +1,12 @@
 <?php
 
-namespace Laravel\Passport\Tests;
+namespace EdwinFadilah\Passport\Tests;
 
-use Laravel\Passport\Passport;
+use EdwinFadilah\Passport\Passport;
 use PHPUnit\Framework\TestCase;
-use Laravel\Passport\Bridge\Scope;
-use Laravel\Passport\Bridge\Client;
-use Laravel\Passport\Bridge\ScopeRepository;
+use EdwinFadilah\Passport\Bridge\Scope;
+use EdwinFadilah\Passport\Bridge\Client;
+use EdwinFadilah\Passport\Bridge\ScopeRepository;
 
 class BridgeScopeRepositoryTest extends TestCase
 {

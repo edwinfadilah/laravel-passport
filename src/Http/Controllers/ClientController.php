@@ -1,11 +1,11 @@
 <?php
 
-namespace Laravel\Passport\Http\Controllers;
+namespace EdwinFadilah\Passport\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Laravel\Passport\ClientRepository;
-use Laravel\Passport\Http\Rules\RedirectRule;
+use EdwinFadilah\Passport\ClientRepository;
+use EdwinFadilah\Passport\Http\Rules\RedirectRule;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 
 class ClientController

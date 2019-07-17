@@ -1,11 +1,11 @@
 <?php
 
-namespace Laravel\Passport\Tests;
+namespace EdwinFadilah\Passport\Tests;
 
 use Mockery as m;
 use PHPUnit\Framework\TestCase;
 use Illuminate\Contracts\Validation\Factory;
-use Laravel\Passport\Http\Rules\RedirectRule;
+use EdwinFadilah\Passport\Http\Rules\RedirectRule;
 use Illuminate\Contracts\Validation\Validator;
 
 class RedirectRuleTest extends TestCase

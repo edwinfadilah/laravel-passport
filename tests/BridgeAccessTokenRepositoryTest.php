@@ -1,16 +1,16 @@
 <?php
 
-namespace Laravel\Passport\Tests;
+namespace EdwinFadilah\Passport\Tests;
 
 use Mockery as m;
 use Carbon\Carbon;
 use PHPUnit\Framework\TestCase;
-use Laravel\Passport\Bridge\Scope;
-use Laravel\Passport\Bridge\Client;
-use Laravel\Passport\TokenRepository;
-use Laravel\Passport\Bridge\AccessToken;
+use EdwinFadilah\Passport\Bridge\Scope;
+use EdwinFadilah\Passport\Bridge\Client;
+use EdwinFadilah\Passport\TokenRepository;
+use EdwinFadilah\Passport\Bridge\AccessToken;
 use Illuminate\Contracts\Events\Dispatcher;
-use Laravel\Passport\Bridge\AccessTokenRepository;
+use EdwinFadilah\Passport\Bridge\AccessTokenRepository;
 
 class BridgeAccessTokenRepositoryTest extends TestCase
 {

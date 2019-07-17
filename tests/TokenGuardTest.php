@@ -1,19 +1,19 @@
 <?php
 
-namespace Laravel\Passport\Tests;
+namespace EdwinFadilah\Passport\Tests;
 
 use Mockery as m;
 use Carbon\Carbon;
 use Firebase\JWT\JWT;
 use Illuminate\Http\Request;
-use Laravel\Passport\Passport;
+use EdwinFadilah\Passport\Passport;
 use PHPUnit\Framework\TestCase;
-use Laravel\Passport\HasApiTokens;
+use EdwinFadilah\Passport\HasApiTokens;
 use Illuminate\Container\Container;
 use Illuminate\Encryption\Encrypter;
-use Laravel\Passport\TokenRepository;
-use Laravel\Passport\ClientRepository;
-use Laravel\Passport\Guards\TokenGuard;
+use EdwinFadilah\Passport\TokenRepository;
+use EdwinFadilah\Passport\ClientRepository;
+use EdwinFadilah\Passport\Guards\TokenGuard;
 use League\OAuth2\Server\ResourceServer;
 use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Contracts\Debug\ExceptionHandler;

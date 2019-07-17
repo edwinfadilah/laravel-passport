@@ -1,11 +1,11 @@
 <?php
 
-namespace Laravel\Passport\Bridge;
+namespace EdwinFadilah\Passport\Bridge;
 
 use DateTime;
-use Laravel\Passport\TokenRepository;
+use EdwinFadilah\Passport\TokenRepository;
 use Illuminate\Contracts\Events\Dispatcher;
-use Laravel\Passport\Events\AccessTokenCreated;
+use EdwinFadilah\Passport\Events\AccessTokenCreated;
 use League\OAuth2\Server\Entities\ClientEntityInterface;
 use League\OAuth2\Server\Entities\AccessTokenEntityInterface;
 use League\OAuth2\Server\Repositories\AccessTokenRepositoryInterface;
@@ -17,7 +17,7 @@ class AccessTokenRepository implements AccessTokenRepositoryInterface
     /**
      * The token repository instance.
      *
-     * @var \Laravel\Passport\TokenRepository
+     * @var \EdwinFadilah\Passport\TokenRepository
      */
     protected $tokenRepository;
 
@@ -31,7 +31,7 @@ class AccessTokenRepository implements AccessTokenRepositoryInterface
     /**
      * Create a new repository instance.
      *
-     * @param  \Laravel\Passport\TokenRepository  $tokenRepository
+     * @param  \EdwinFadilah\Passport\TokenRepository  $tokenRepository
      * @param  \Illuminate\Contracts\Events\Dispatcher  $events
      */
     public function __construct(TokenRepository $tokenRepository, Dispatcher $events)

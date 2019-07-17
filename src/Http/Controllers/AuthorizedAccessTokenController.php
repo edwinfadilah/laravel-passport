@@ -1,10 +1,10 @@
 <?php
 
-namespace Laravel\Passport\Http\Controllers;
+namespace EdwinFadilah\Passport\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Laravel\Passport\TokenRepository;
+use EdwinFadilah\Passport\TokenRepository;
 
 class AuthorizedAccessTokenController
 {

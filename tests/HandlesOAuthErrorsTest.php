@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Passport\Tests;
+namespace EdwinFadilah\Passport\Tests;
 
 use Error;
 use Exception;
@@ -12,7 +12,7 @@ use Illuminate\Container\Container;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use League\OAuth2\Server\Exception\OAuthServerException;
-use Laravel\Passport\Http\Controllers\HandlesOAuthErrors;
+use EdwinFadilah\Passport\Http\Controllers\HandlesOAuthErrors;
 
 class HandlesOAuthErrorsTest extends TestCase
 {
