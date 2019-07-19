@@ -59,7 +59,7 @@ class CheckClientCredentials
      * @param  \Psr\Http\Message\ServerRequestInterface $psr
      * @param  array  $scopes
      * @return void
-     * @throws \Laravel\Passport\Exceptions\MissingScopeException
+     * @throws \EdwinFadilah\Passport\Exceptions\MissingScopeException
      */
     protected function validateScopes($psr, $scopes)
     {

@@ -17,7 +17,7 @@ use Illuminate\Config\Repository as Config;
 use League\OAuth2\Server\AuthorizationServer;
 use League\OAuth2\Server\Grant\AuthCodeGrant;
 use League\OAuth2\Server\Grant\ImplicitGrant;
-use League\OAuth2\Server\Grant\PasswordGrant;
+use EdwinFadilah\Passport\GrantTypes\PasswordGrant;
 use EdwinFadilah\Passport\Bridge\PersonalAccessGrant;
 use League\OAuth2\Server\Grant\RefreshTokenGrant;
 use EdwinFadilah\Passport\Bridge\RefreshTokenRepository;

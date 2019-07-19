@@ -2,6 +2,7 @@
 
 namespace EdwinFadilah\Passport\Http\Controllers;
 
+use EdwinFadilah\Passport\GrantTypes\PasswordGrant;
 use EdwinFadilah\Passport\TokenRepository;
 use Lcobucci\JWT\Parser as JwtParser;
 use Psr\Http\Message\ServerRequestInterface;
