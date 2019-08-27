@@ -18,6 +18,13 @@ class Passport
     public static $implicitGrantEnabled = false;
 
     /**
+     * Indicates if the social grant type is enabled.
+     *
+     * @var bool|null
+     */
+    public static $socialGrantEnabled = false;
+
+    /**
      * Indicates if Passport should revoke existing tokens when issuing a new one.
      *
      * @var bool
@@ -146,6 +153,18 @@ class Passport
     public static function enableImplicitGrant()
     {
         static::$implicitGrantEnabled = true;
+
+        return new static;
+    }
+
+    /**
+     * Enable the implicit grant type.
+     *
+     * @return static
+     */
+    public static function enableSocialGrant()
+    {
+        static::$socialGrantEnabled = true;
 
         return new static;
     }

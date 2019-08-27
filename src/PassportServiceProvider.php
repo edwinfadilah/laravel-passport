@@ -3,6 +3,7 @@
 namespace EdwinFadilah\Passport;
 
 use DateInterval;
+use EdwinFadilah\Passport\GrantTypes\SocialGrant;
 use Illuminate\Auth\RequestGuard;
 use Illuminate\Auth\Events\Logout;
 use League\OAuth2\Server\CryptKey;
@@ -124,6 +125,12 @@ class PassportServiceProvider extends ServiceProvider
                         $this->makeImplicitGrant(), Passport::tokensExpireIn()
                     );
                 }
+
+                if (Passport::$socialGrantEnabled) {
+                    $server->enableGrantType(
+                        $this->makeSocialGrant(), Passport::tokensExpireIn()
+                    );
+                }
             });
         });
     }
@@ -193,6 +200,23 @@ class PassportServiceProvider extends ServiceProvider
     protected function makeImplicitGrant()
     {
         return new ImplicitGrant(Passport::tokensExpireIn());
+    }
+
+    /**
+     * Create and configure a Social grant instance.
+     *
+     * @return SocialGrant
+     */
+    protected function makeSocialGrant()
+    {
+        $grant = new SocialGrant(
+            $this->app->make(Bridge\UserRepository::class),
+            $this->app->make(Bridge\RefreshTokenRepository::class)
+        );
+
+        $grant->setRefreshTokenTTL(Passport::refreshTokensExpireIn());
+
+        return $grant;
     }
 
     /**
