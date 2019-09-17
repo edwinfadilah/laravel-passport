@@ -27,6 +27,7 @@ use stdClass;
 
 class AuthOtpCodeGrant extends AbstractAuthorizeGrant
 {
+    use GetRequestAttribute;
     /**
      * @var DateInterval
      */
