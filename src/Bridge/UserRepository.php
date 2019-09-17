@@ -58,7 +58,7 @@ class UserRepository implements UserRepositoryInterface
         return new User($user->getAuthIdentifier());
     }
 
-    public function getUserEntityByUserId($user_id, $grant_type, ClientEntityInterface $clientEntity)
+    public function getUserEntityByUserId($user_id)
     {
         $provider = config('auth.guards.api.provider');
 

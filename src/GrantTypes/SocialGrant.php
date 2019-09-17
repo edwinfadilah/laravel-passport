@@ -91,9 +91,7 @@ class SocialGrant extends AbstractGrant
         }
 
         $user = $this->userRepository->getUserEntityByUserId(
-            $user_id,
-            $this->getIdentifier(),
-            $client
+            $user_id
         );
 
         if ($user instanceof UserEntityInterface === false) {

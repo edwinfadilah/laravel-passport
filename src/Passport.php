@@ -25,6 +25,13 @@ class Passport
     public static $socialGrantEnabled = false;
 
     /**
+     * Indicates if the auth otp code grant type is enabled.
+     *
+     * @var bool|null
+     */
+    public static $authOtpCodeGrantEnabled = false;
+
+    /**
      * Indicates if Passport should revoke existing tokens when issuing a new one.
      *
      * @var bool
@@ -158,13 +165,25 @@ class Passport
     }
 
     /**
-     * Enable the implicit grant type.
+     * Enable the social grant type.
      *
      * @return static
      */
     public static function enableSocialGrant()
     {
         static::$socialGrantEnabled = true;
+
+        return new static;
+    }
+
+    /**
+     * Enable the auth otp code grant type.
+     *
+     * @return static
+     */
+    public static function enableAuthOtpCodeGrant()
+    {
+        static::$authOtpCodeGrantEnabled = true;
 
         return new static;
     }

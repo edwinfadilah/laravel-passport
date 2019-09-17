@@ -3,6 +3,7 @@
 namespace EdwinFadilah\Passport;
 
 use DateInterval;
+use EdwinFadilah\Passport\GrantTypes\AuthOtpCodeGrant;
 use EdwinFadilah\Passport\GrantTypes\SocialGrant;
 use Illuminate\Auth\RequestGuard;
 use Illuminate\Auth\Events\Logout;
@@ -131,6 +132,13 @@ class PassportServiceProvider extends ServiceProvider
                         $this->makeSocialGrant(), Passport::tokensExpireIn()
                     );
                 }
+
+                if (Passport::$authOtpCodeGrantEnabled) {
+                    $server->enableGrantType(
+                        $this->makeAuthOtpCodeGrant(), Passport::tokensExpireIn()
+                    );
+                }
+
             });
         });
     }
@@ -217,6 +225,33 @@ class PassportServiceProvider extends ServiceProvider
         $grant->setRefreshTokenTTL(Passport::refreshTokensExpireIn());
 
         return $grant;
+    }
+
+    /**
+     * Build the Auth OTP Code grant instance.
+     *
+     * @return AuthOtpCodeGrant
+     */
+    protected function buildAuthOtpCodeGrant()
+    {
+        return new AuthOtpCodeGrant(
+            $this->app->make(Bridge\UserRepository::class),
+            $this->app->make(Bridge\AuthCodeRepository::class),
+            $this->app->make(Bridge\RefreshTokenRepository::class),
+            new DateInterval('PT10M')
+        );
+    }
+
+    /**
+     * Create and configure an instance of the Auth OTP Code grant.
+     *
+     * @return AuthOtpCodeGrant
+     */
+    protected function makeAuthOtpCodeGrant()
+    {
+        return tap($this->buildAuthOtpCodeGrant(), function ($grant) {
+            $grant->setRefreshTokenTTL(Passport::refreshTokensExpireIn());
+        });
     }
 
     /**
