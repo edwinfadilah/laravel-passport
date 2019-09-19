@@ -2,6 +2,10 @@
 
 namespace EdwinFadilah\Passport\Guards;
 
+use EdwinFadilah\Passport\Exceptions\HttpRequestException;
+use EdwinFadilah\Passport\Exceptions\TokenExpiredException;
+use EdwinFadilah\Passport\Exceptions\TokenRevokedException;
+use EdwinFadilah\Passport\Exceptions\UserNotFoundException;
 use Exception;
 use Firebase\JWT\JWT;
 use Illuminate\Http\Request;
@@ -57,12 +61,11 @@ class TokenGuard
     /**
      * Create a new token guard instance.
      *
-     * @param  \League\OAuth2\Server\ResourceServer  $server
-     * @param  \Illuminate\Contracts\Auth\UserProvider  $provider
-     * @param  \EdwinFadilah\Passport\TokenRepository  $tokens
-     * @param  \EdwinFadilah\Passport\ClientRepository  $clients
-     * @param  \Illuminate\Contracts\Encryption\Encrypter  $encrypter
-     * @return void
+     * @param  \League\OAuth2\Server\ResourceServer $server
+     * @param  \Illuminate\Contracts\Auth\UserProvider $provider
+     * @param  \EdwinFadilah\Passport\TokenRepository $tokens
+     * @param  \EdwinFadilah\Passport\ClientRepository $clients
+     * @param  \Illuminate\Contracts\Encryption\Encrypter $encrypter
      */
     public function __construct(ResourceServer $server,
                                 UserProvider $provider,
@@ -80,8 +83,9 @@ class TokenGuard
     /**
      * Get the user for the incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return mixed
+     * @throws HttpRequestException
      */
     public function user(Request $request)
     {
@@ -89,20 +93,23 @@ class TokenGuard
             return $this->authenticateViaBearerToken($request);
         } elseif ($request->cookie(Passport::cookie())) {
             return $this->authenticateViaCookie($request);
+        } else {
+            throw new HttpRequestException();
         }
     }
 
     /**
      * Get the client for the incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return mixed
+     * @throws HttpRequestException
      */
     public function client(Request $request)
     {
         if ($request->bearerToken()) {
             if (! $psr = $this->getPsrRequestViaBearerToken($request)) {
-                return;
+                throw new HttpRequestException();
             }
 
             return $this->clients->findActive(
@@ -118,13 +125,14 @@ class TokenGuard
     /**
      * Authenticate the incoming request via the Bearer token.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return mixed
+     * @throws HttpRequestException
      */
     protected function authenticateViaBearerToken($request)
     {
         if (! $psr = $this->getPsrRequestViaBearerToken($request)) {
-            return;
+            throw new HttpRequestException();
         }
 
         // If the access token is valid we will retrieve the user according to the user ID
@@ -135,7 +143,7 @@ class TokenGuard
         );
 
         if (! $user) {
-            return;
+            throw new UserNotFoundException();
         }
 
         // Next, we will assign a token instance to this user which the developers may use
@@ -151,7 +159,7 @@ class TokenGuard
         // its tokens may still be used. If not, we will bail out since we don't want a
         // user to be able to send access tokens for deleted or revoked applications.
         if ($this->clients->revoked($clientId)) {
-            return;
+            throw new TokenRevokedException();
         }
 
         return $token ? $user->withAccessToken($token) : null;
@@ -175,22 +183,24 @@ class TokenGuard
         } catch (OAuthServerException $e) {
             $request->headers->set('Authorization', '', true);
 
-            Container::getInstance()->make(
+            throw new HttpRequestException(422, "Invalid token");
+            /*Container::getInstance()->make(
                 ExceptionHandler::class
-            )->report($e);
+            )->report($e);*/
         }
     }
 
     /**
      * Authenticate the incoming request via the token cookie.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return mixed
+     * @throws HttpRequestException
      */
     protected function authenticateViaCookie($request)
     {
         if (! $token = $this->getTokenViaCookie($request)) {
-            return;
+            throw new HttpRequestException();
         }
 
         // If this user exists, we will return this user and attach a "transient" token to
@@ -204,8 +214,10 @@ class TokenGuard
     /**
      * Get the token cookie via the incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return mixed
+     * @throws HttpRequestException
+     * @throws TokenExpiredException
      */
     protected function getTokenViaCookie($request)
     {
@@ -215,7 +227,7 @@ class TokenGuard
         try {
             $token = $this->decodeJwtTokenCookie($request);
         } catch (Exception $e) {
-            return;
+            throw new HttpRequestException();
         }
 
         // We will compare the CSRF token in the decoded API token against the CSRF header
@@ -223,7 +235,7 @@ class TokenGuard
         // a valid source and we won't authenticate the request for further handling.
         if (! Passport::$ignoreCsrfToken && (! $this->validCsrf($token, $request) ||
             time() >= $token['expiry'])) {
-            return;
+            throw new TokenExpiredException("Token is invalid or already expired");
         }
 
         return $token;
